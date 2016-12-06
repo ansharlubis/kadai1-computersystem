@@ -34,4 +34,5 @@ int main(){
 	pi(n, b);
 	printf("result: %f\n", *b);	
 	
+	return 0;
 }
