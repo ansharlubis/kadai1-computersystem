@@ -5,15 +5,12 @@
 int pi(int n, double *pi){
 	int i;
 	int m = 0;
-	time_t t;
-
-	srand((unsigned) time(&t));
-
+	
 	for (i = 0; i < n; i++){
-		int x = rand() % 1000 + 1;
-		int y = rand() % 1000 + 1;
+		int x = rand() % 10000 + 1;
+		int y = rand() % 10000 + 1;
 
-		if ((x*x)+(y*y) < 1000000){
+		if ((x*x)+(y*y) < 100000000){
 			m = m+1;
 		}
 	}
@@ -29,10 +26,16 @@ int pi(int n, double *pi){
 int main(){
 	int n = 100000;
 	double *b;
+	time_t t;
 
-	printf("initial: %f\n", *b);
-	pi(n, b);
-	printf("result: %f\n", *b);	
-	
+	srand((unsigned) time(&t));
+
+	for (int i = 0; i < 10; i++){
+		*b = 0;
+		printf("initial: %f\n", *b);
+		pi(n, b);
+		printf("result: %f\n", *b);	
+	}
+
 	return 0;
 }

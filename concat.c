@@ -47,7 +47,6 @@ void concat(char *target, char *src1, char *src2){
 			i++;
 		}
 	}
-
 }
 
 int main(){

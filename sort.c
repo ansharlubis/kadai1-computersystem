@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void sort_int_array(int *ary, int ary_size){
 	int i, j;
@@ -21,16 +22,26 @@ void sort_int_array(int *ary, int ary_size){
 }
 
 int main(){
-	int ary[] = {1, 6, 7, 8, 2, 3, 2, 1, 5, 7, 2, 13, 253, 2, 2, 3, -3, -233, 934, 2, 334, 97};
-	int ary_size = 22;
+	int size = 20;
+	int rand_array[size];
+	time_t t;
 
-	sort_int_array(ary, ary_size);
+	srand((unsigned) time(&t));
 
-	printf("array: ");
-	for (int i = 0; i < ary_size; i++){
-		printf("%d ", *(ary+i));
+	for (int k = 0; k < 10; k++){
+		
+		for (int j = 0; j < size; j++){
+			rand_array[j] = rand() % 1000 + 1;
+		}
+
+		sort_int_array(rand_array, size);
+	
+		printf("array: ");
+		for (int i = 0; i < size; i++){
+			printf("%d ", *(rand_array+i));
+		}
+		printf("\n");
 	}
-	printf("\n");
 
 	return 0;
 }
