@@ -30,7 +30,7 @@ int main(){
 
 	srand((unsigned) time(&t));
 
-	for (int i = 0; i < 10; i++){
+	for (int i = 0; i < 5; i++){
 		*b = 0;
 		printf("initial: %f\n", *b);
 		pi(n, b);

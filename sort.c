@@ -22,25 +22,31 @@ void sort_int_array(int *ary, int ary_size){
 }
 
 int main(){
-	int size = 20;
+	int size = 10;
 	int rand_array[size];
 	time_t t;
 
 	srand((unsigned) time(&t));
 
-	for (int k = 0; k < 10; k++){
+	for (int k = 0; k < 5; k++){
 		
 		for (int j = 0; j < size; j++){
-			rand_array[j] = rand() % 1000 + 1;
+			rand_array[j] = rand() % 100 + 1;
 		}
 
-		sort_int_array(rand_array, size);
-	
-		printf("array: ");
+		printf("initial array: ");
 		for (int i = 0; i < size; i++){
 			printf("%d ", *(rand_array+i));
 		}
 		printf("\n");
+
+		sort_int_array(rand_array, size);
+	
+		printf("sorted array: ");
+		for (int i = 0; i < size; i++){
+			printf("%d ", *(rand_array+i));
+		}
+		printf("\n");		
 	}
 
 	return 0;
